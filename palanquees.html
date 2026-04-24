@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestion de palanquées</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #0ea5e9;
+      --border: #dbe4f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 14px;
+    }
+
+    .container {
+      max-width: 420px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+    }
+
+    h1 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .top-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      font-size: 0.95rem;
+      background: #fff;
+    }
+
+    .section-title {
+      margin-bottom: 8px;
+      font-size: 1rem;
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .dive-row {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px;
+      margin-bottom: 10px;
+      background: #fafcff;
+    }
+
+    .row-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--muted);
+    }
+
+    .row-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #fff;
+      padding: 12px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    @media (min-width: 420px) {
+      .row-grid {
+        grid-template-columns: 1.2fr 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="card">
+      <h1>Gestion de palanquées</h1>
+      <div class="top-grid">
+        <div>
+          <label for="date">Date</label>
+          <input id="date" type="date" />
+        </div>
+        <div>
+          <label for="heure">Heure</label>
+          <input id="heure" type="time" />
+        </div>
+        <div>
+          <label for="bateau">Nom du bateau</label>
+          <input id="bateau" type="text" placeholder="Ex: Nautilus" />
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="section-title">Palanquées</h2>
+
+      <article class="dive-row">
+        <p class="row-title">Plongée 1</p>
+        <div class="row-grid">
+          <div>
+            <label for="nom-plongee-1">Nom de la plongée</label>
+            <input id="nom-plongee-1" type="text" placeholder="Ex: Épave sud" />
+          </div>
+          <div>
+            <label for="profondeur-1">Profondeur (m)</label>
+            <input id="profondeur-1" type="number" min="0" placeholder="18" />
+          </div>
+          <div>
+            <label for="temps-1">Temps (min)</label>
+            <input id="temps-1" type="number" min="0" placeholder="42" />
+          </div>
+        </div>
+      </article>
+
+      <article class="dive-row">
+        <p class="row-title">Plongée 2</p>
+        <div class="row-grid">
+          <div>
+            <label for="nom-plongee-2">Nom de la plongée</label>
+            <input id="nom-plongee-2" type="text" placeholder="Ex: Tombant est" />
+          </div>
+          <div>
+            <label for="profondeur-2">Profondeur (m)</label>
+            <input id="profondeur-2" type="number" min="0" placeholder="22" />
+          </div>
+          <div>
+            <label for="temps-2">Temps (min)</label>
+            <input id="temps-2" type="number" min="0" placeholder="35" />
+          </div>
+        </div>
+      </article>
+
+      <button class="btn" type="button">Enregistrer la sortie</button>
+    </section>
+  </main>
+</body>
+</html>
